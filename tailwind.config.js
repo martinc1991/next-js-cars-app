@@ -24,6 +24,10 @@ module.exports = {
         pattern: "url('/pattern.png')",
         'hero-bg': "url('/hero-bg.png')",
       },
+      boxShadow: {
+        carcard: '5px 5px 30px 2px rgba(0, 0, 0, 0.2)',
+        carcardhover: '5px 5px 30px 10px rgba(0, 0, 0, 0.2)',
+      },
     },
   },
   plugins: [],
