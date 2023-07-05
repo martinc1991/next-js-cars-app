@@ -1,4 +1,4 @@
-import { CarCard, Filters, Hero, ShowMore } from '@/components';
+import { CarResults, Filters, Hero } from '@/components';
 import NoResults from '@/components/NoResults';
 import { HomeProps } from '@/types';
 import { fetchCars } from '@/utils';
@@ -23,18 +23,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <p>Explore out cars you might like</p>
         </div>
         <Filters />
-        {!isDataEmpty ? (
-          <section>
-            <div className='home__cars-wrapper'>
-              {allCars?.map((car) => (
-                <CarCard car={car} />
-              ))}
-            </div>
-            <ShowMore pageNumber={(searchParams.limit || 10) / 10} isNext={(searchParams.limit || 10) > allCars.length} />
-          </section>
-        ) : (
-          <NoResults />
-        )}
+        {!isDataEmpty ? <CarResults searchParams={searchParams} allCars={allCars} /> : <NoResults />}
       </div>
     </main>
   );
