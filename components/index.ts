@@ -1,13 +1,11 @@
-import CarCard from './CarCard';
-import CarResults from './CarResults';
-import CustomButton from './CustomButton';
-import CustomFilter from './CustomFilter';
-import Filters from './Filters';
-import Footer from './Footer';
-import Hero from './Hero';
-import NavBar from './Navbar';
-import SearchBar from './Searchbar';
-import ShowMore from './ShowMore';
+export { default as CarCard } from './CarCard';
+export { default as CarResults } from './CarResults';
 export { default as CatalogueTitle } from './CatalogueTitle';
-
-export { CarCard, CarResults, CustomButton, CustomFilter, Filters, Footer, Hero, NavBar, SearchBar, ShowMore };
+export { default as CustomButton } from './CustomButton';
+export { default as CustomFilter } from './CustomFilter';
+export { default as Filters } from './Filters';
+export { default as Footer } from './Footer';
+export { default as Hero } from './Hero';
+export { default as NavBar } from './Navbar';
+export { default as SearchBar } from './Searchbar';
+export { default as ShowMore } from './ShowMore';
