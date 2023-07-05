@@ -1,8 +1,9 @@
+import { SITE_NAME } from '@/site/config';
 import './globals.css';
 import { Footer, NavBar } from '@/components';
 
 export const metadata = {
-  title: 'Car Hub',
+  title: SITE_NAME,
   description: "Discover world's best car showcase application",
 };
 
