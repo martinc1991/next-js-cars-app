@@ -1,4 +1,5 @@
 import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from '@/components';
+import NoResults from '@/components/NoResults';
 import { fuels, yearsOfProduction } from '@/constants';
 import { HomeProps } from '@/types';
 import { fetchCars } from '@/utils';
@@ -26,7 +27,6 @@ export default async function Home({ searchParams }: HomeProps) {
 
         <div className='home__filters'>
           <SearchBar />
-
           <div className='home__filter-container'>
             <CustomFilter title='fuel' options={fuels} />
             <CustomFilter title='year' options={yearsOfProduction} />
@@ -40,14 +40,10 @@ export default async function Home({ searchParams }: HomeProps) {
                 <CarCard car={car} />
               ))}
             </div>
-
             <ShowMore pageNumber={(searchParams.limit || 10) / 10} isNext={(searchParams.limit || 10) > allCars.length} />
           </section>
         ) : (
-          <div className='home__error-container'>
-            <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
-            <p>{allCars?.message}</p>
-          </div>
+          <NoResults />
         )}
       </div>
     </main>
