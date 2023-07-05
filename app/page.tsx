@@ -1,4 +1,4 @@
-import { CarResults, Filters, Hero } from '@/components';
+import { CarResults, CatalogueTitle, Filters, Hero } from '@/components';
 import NoResults from '@/components/NoResults';
 import { HomeProps } from '@/types';
 import { fetchCars } from '@/utils';
@@ -18,10 +18,7 @@ export default async function Home({ searchParams }: HomeProps) {
     <main className='overflow-hidden'>
       <Hero />
       <div className='mt-12 padding-x padding-y max-width' id='discover'>
-        <div className='home__text-container'>
-          <h1 className='text-4xl font-extrabold'>Car Catalogue</h1>
-          <p>Explore out cars you might like</p>
-        </div>
+        <CatalogueTitle />
         <Filters />
         {!isDataEmpty ? <CarResults searchParams={searchParams} allCars={allCars} /> : <NoResults />}
       </div>

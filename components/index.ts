@@ -8,5 +8,6 @@ import Hero from './Hero';
 import NavBar from './Navbar';
 import SearchBar from './Searchbar';
 import ShowMore from './ShowMore';
+export { default as CatalogueTitle } from './CatalogueTitle';
 
 export { CarCard, CarResults, CustomButton, CustomFilter, Filters, Footer, Hero, NavBar, SearchBar, ShowMore };
