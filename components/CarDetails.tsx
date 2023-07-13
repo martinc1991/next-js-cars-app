@@ -3,6 +3,7 @@ import { generateCarImageUrl } from '@/utils';
 import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
 import { Fragment } from 'react';
+import CarDetailsRow from './CardDetailsRow';
 
 interface CarDetailsProps {
   isOpen: boolean;
@@ -70,12 +71,17 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => (
                   </h2>
 
                   <div className='mt-3 flex flex-wrap gap-4'>
-                    {Object.entries(car).map(([key, value]) => (
-                      <div className='flex justify-between gap-5 w-full text-right' key={key}>
-                        <h4 className='text-grey capitalize'>{key.split('_').join(' ')}</h4>
-                        <p className='text-black-100 font-semibold'>{value}</p>
-                      </div>
-                    ))}
+                    <CarDetailsRow category={'Make'} value={car.make} />
+                    <CarDetailsRow category={'Model'} value={car.model} />
+                    <CarDetailsRow category={'Year'} value={car.year} />
+                    <CarDetailsRow category={'Transmission'} value={car.transmission} />
+                    <CarDetailsRow category={'Fuel Type'} value={car.fuel_type} />
+                    <CarDetailsRow category={'Drive'} value={car.drive} />
+                    <CarDetailsRow category={'Cylinders'} value={car.cylinders} />
+                    <CarDetailsRow category={'City MPG'} value={car.city_mpg} />
+                    <CarDetailsRow category={'Highway MPG'} value={car.highway_mpg} />
+                    <CarDetailsRow category={'Combination MPG'} value={car.combination_mpg} />
+                    <CarDetailsRow category={'Class'} value={car.class} />
                   </div>
                 </div>
               </Dialog.Panel>
